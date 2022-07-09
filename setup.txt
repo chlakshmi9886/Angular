@@ -1,0 +1,80 @@
+What are the challenges in modern web development?
+- Unified UX
+- Fluid UX
+- Loosely Coupled and Extensible
+
+What is solution?
+- SPA
+
+How to Build SPA
+- JavaScript
+- jQuery
+- Angular
+- React
+- Vue etc..
+
+
+                                   TypeScript
+
+What are the issues with JavaScript?
+- JavaScript is not implicitly strictly typed.
+- JavaScript is not strongly typed.
+- It will not support all features of OOP.
+- It is not an OOP language.
+- It support of certain features of OOP.
+- Extensibility Issues
+- Security Issues
+
+- Google Introduced a Framework called Angular JS which uses JavaScript. [2010]
+- Google Started a new developers platform by name "Angular" 2014
+                        Angular - 2
+- Google Started a language called "Atscript".
+- Microsoft already have a language called "TypeScript", similar to "AtScript"
+- "Anders Hejlberg" introduced "C#" and "TypeScript".
+
+Features of TypeScript
+- It is strictly typed
+- It is strongly typed
+- It is an OOP language.
+- It supports all features of OOP.
+- It is built with typescript
+- It can interact with hardware services
+- It is light weight
+- It is faster
+- It can build large scale applications.
+
+Note: TypeScript not understandable to Browser
+          TypeScript is trans compiled into JavaScript.
+
+Setup Environment for TypeScript
+----------------------------------------------
+1. Download and Install "Node.js" on your PC  [Win 8+]
+
+    [We are installing Node.js for a package manager called NPM]
+
+        - NPM
+        - Yarn
+        - NuGet
+        - RubyGems etc..
+
+    https://nodejs.org/en/
+
+ 2. Open Command Prompt
+
+        C:\>node -v                node js version
+        C:\>npm -v                npm version
+
+    Note: Node must be 12+  [16 is current]
+            NPM must be  6+    [8 is current]
+
+
+3. Install TypeScript on your PC
+
+    C:\>npm install -g typescript
+
+    C:\>tsc -v            [ 4. 7 latest ]
+
+
+4. Download and Install "Visual Studio Code" editor
+
+https://code.visualstudio.com/

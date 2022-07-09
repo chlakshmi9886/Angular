@@ -1,0 +1,95 @@
+1. Install Node.js
+2. Install TypeScript
+3. Visual Studio Code
+
+                        Creating a new Project
+
+1. Open any location on your PC and create a new folder for project
+
+                    E:\TypeScript-App
+
+2. Open project folder in "Visual Studio Code"
+
+3. Open Terminal
+        Terminal Menu => New Terminal    or   [Ctrl + `]
+
+4. Switch to Command Prompt [If it is using Power Shell]
+
+5. Run the following command
+
+        >npm  init  -y
+ 
+    [ It will generate  package.json ]
+
+FAQ: What is package.json?
+Ans: It comprises of project meta data. Information about project.
+        a) Version
+        b) Name
+        c) License
+        d) Dependencies [Libraries]
+
+6. Run the command
+
+        >tsc  --init
+
+    [tsconfig.json]
+
+
+FAQ: What is purpose of tsconfig.json?
+Ans: It configures the rules for typescript in a project.
+        It also defines language settings.
+
+        TypeScript  4.7 => JavaScript  ES5, ES6, ES7, ES8,..ES2022
+                                 ECMA2015, 2016, 2017... 2022
+                                    ES6
+                                    JavaScript
+
+7. Every project initially comprises of following folders
+
+        a) public
+        b) src
+
+   public        : It is used to store static resources like
+                    html, text, images, pdf, audio, video etc..
+
+   src            : It is used to store dynamic resources like
+                    css, sass, less, js, ts etc..
+
+
+8. Go to public folder and add a new file
+                "index.html"
+
+Note: Always test your project on a web server
+         You have to install "Live Server" for Visual Studio Code"
+
+9. Right Click on "Index.html" and select
+
+            "Open With Live Server"
+
+
+
+                        TypeScript Architecture
+                         ---------------------------------
+1. Core TypeScript Compiler
+    - It is responsible for tracking and reporting errors in program.
+    - Syntax errors
+    - Parsing errors
+    - Input and output errors
+   
+2. Standalone TS compiler
+   - It is responsible for translating TypeScript program into JavaScript
+    [tsc.ts]
+
+3. Language Service
+  - It comprises of the library required for a language.
+
+4. TsServer
+  - It is responsible for hosting, listening, request and response.
+  - It loads your typescript program, compiles and handles request and response.
+
+5. VS Shims
+  - Shim makes your language platform neutral.
+  - Shim is an API
+
+tsArchitecture.png
+Image

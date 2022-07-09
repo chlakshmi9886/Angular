@@ -1,0 +1,244 @@
+- Variables
+- DataTypes
+    a) Primitive Types
+        - number
+        - string
+        - boolean
+        - null
+        - undefined
+    b) Non Primitive Types
+        - array
+        - object
+        - map
+- Union of Type
+
+                              Arrays in TypeScript
+
+- TypeScript array is same as in JavaScript but you can configure with similar types or various types.
+
+Syntax:
+        let  categories:string[] = [ ];
+        let  categories:string[] = new Array();
+
+        let  values:any[]    = ["A", 10, true];
+
+FAQ: What is difference between "[ ]" and "Array()"?
+Ans:  "Array()" can define array size.
+       
+        Syntax:
+        let values:string[] = new Array(3);
+
+        "Array()" can initialize values only of similar type even when the
+         data type is "any".
+
+Note: Array() can assign various values not intialize.
+
+        [ ]  it allows various types of values and will not have size.
+
+
+- Array Manipulation Methods are same as JavaScript
+
+Reading:
+toString()
+join()
+slice()
+find()
+filter()
+map()
+
+Inserting:
+push()
+unshift()
+splice()
+
+Removing:
+pop()
+shift()
+splice()
+
+Index:
+indexOf()
+lastIndexOf()
+
+
+                                TypeScript Object [JSON]
+
+- Object keeps all your related data and logic together.
+- TypeScript uses "any" as data type for object.
+- Object is a set of keys and values configured in a block "{  }".
+- Key is string type and value is any type.
+
+Syntax:
+        let product:any = { Key:Value } ;
+
+
+Ex:
+
+let product:any = {
+    "Name":"Samsung TV",
+    "Price": 45000.44,
+    "Qty": 2,
+    "Total": function(){
+        return this.Qty * this.Price;
+    },
+    "Print": function(){
+        console.log(`Name=${this.Name}\nPrice=${this.Price}\nQty=${this.Qty}\nTotal=${this.Total()}`);
+    }
+}
+product.Name = "Samsung LED TV";
+product.Print();
+
+
+                            TypeScript Map Type
+- Map is same like object with key and value collection.
+- Map can have various types of keys.
+- Map is faster than object.
+- It provides implicit iterators to read all keys, values and entries.
+- Object needs explicit iterators
+
+Ex:
+let product:any = {
+    "Name":"Samsung TV",
+    "Price": 45000.44,
+    "Qty": 2,
+    "Stock":true
+}
+for(var property in product)
+{
+    console.log(`${property} : ${product[property]}`);
+}
+
+- Map provides iterators like
+        keys()
+        values()
+        entries()
+
+Syntax:
+        let  obj = new Map();
+        obj.set(key,value);
+
+        obj.get(key);
+        obj.keys()
+        obj.values()
+        obj.entries()
+        obj.delete(key)
+        obj.size [count of keys]
+        obj.has()  verify and search for key
+
+FAQ: How to delete a project from object?
+Ans:  By using "delete" operator.
+   
+        Syntax:
+                delete  object.Property;
+
+Ex:
+let product:any = {
+    "Name":"Samsung TV",
+    "Price": 45000.44,
+    "Qty": 2,
+    "Stock":true
+}
+delete product.Qty;
+for(var property in product)
+{
+    console.log(`${property} : ${product[property]}`);
+}
+
+FAQ: How to check for any property in Object?
+Ans: By using "in" operator
+
+Syntax:
+            "Property"  in  Object            // true or false
+
+Ex:
+let product:any = {
+    "Name":"Samsung TV",
+    "Price": 45000.44,
+    "Qty": 2,
+    "Stock":true
+}
+
+if("Qty" in product) {
+    console.log("Quantity Available");
+} else {
+    console.log("Quantity N/A");
+}
+
+Ex: Map
+
+
+let obj:any = new Map();
+obj.set(1, "HTML is a markup language");
+obj.set("js", "JavaScript is a client side language");
+
+console.log(obj.get(1));
+
+
+FAQ: What is Type Inference?
+Ans:  It is a technique used in TypeScript to define data type for reference based on the value initialized.
+
+        let  x;            // x is any type
+        let x = 0;        // x is number
+        let x = "";        // x is string
+        let x = false;    // x is boolean
+
+                            TypeScript Date
+
+- Date is stored by using "Date()" constructor.
+- Date() will load current date into memory.
+- You can load specific date and time by using
+
+        "YY-MM-DD  HR:MIN:SEC:MilliSeconds"
+
+Syntax:
+let Mfd:any = new Date("2022-01-22 10:30");
+
+- To read date and time values you can use all JavaScript Date and Time methods
+
+getHours()
+getMinutes()
+getSeconds()
+getMillSeconds()
+getDate()                        22
+getDay()                            0 = Sunday
+getMonth()                        0 = January
+getFullYear()
+toLocaleDateString()
+toLocaleTimeString()
+
+setHours()
+setMinutes()
+setSeconds()
+setMilliSeconds()
+setDate()
+setMonth()
+setYear()
+
+Ex:
+
+let Mfd:any = new Date();
+let weekdays:string[] = ["Sun", "Mon","Tue","Wed","Thr","Friday","Sat"];
+console.log(weekdays[Mfd.getDay()]);
+
+                        TypeScript Regular Expression
+- It uses a pattern to verify the input value.
+- Patterns are built by using meta characters and quantifiers.
+- Patterns are written in "/ your pattern /".
+- Pattern is verified by using "match()" method.
+
+Syntax:
+        let  regEx:any  = /[A-Z]{4,10}/;
+
+Ex:
+let mobile:string = "+919876543210";
+let regExp:any = /\+91[0-9]{10}/;
+
+if(mobile.match(regExp)){
+    console.log("Mobile Verified");
+} else {
+    console.log("Invalid Mobile: +91 and 10 digits required");
+}
+
+
+
+                        TypeScript OOP

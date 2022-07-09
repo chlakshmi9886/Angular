@@ -1,0 +1,179 @@
+What is TypeScript
+How to Install TypeScript
+How to Create a new Project
+    node.js
+    > npm install -g typescript
+    > npm init -y
+    > tsc --init
+- package.json
+- tsconfig.json
+
+                       TypeScript Language Basics
+1. Variables
+2. DataTypes
+3. Operators
+4. Statements
+5. Functions
+
+
+Note: TypeScript files are saved with extention ".ts"
+                        program.ts
+        To translate typescript program into JavaScript
+   
+                    > tsc  program.ts              // generates program.js
+
+         Run the JavaScript Program
+
+                    > node  program.js
+
+          You can include the JavaScript file into HTML page
+
+          <head>
+            <script src="program.js"> </script>
+          </head>
+
+
+                                Variables
+- Variables in TypeScript are same as in JavaScript.
+- Variables are declared by using
+        a) var
+        b) let
+        c) const
+
+Var
+- It defines function scope variable.
+- It allows declaring, assigning and initialization.
+            var x;            // declaring
+            x = 10;        // assigning
+            var y = 20;    // initialization
+- It allows hoisting
+- It allows shadowing
+
+Let
+- It defines block scope variable.
+- It allows declaring, assigning and initializaiton.
+- It will not allow hoisting and shadowing.
+
+Const
+- It defines block scope variable.
+- It allows only initialization.
+        const x ;        // invalid
+        x = 10;        // invalid
+
+        const x = 10;    // invalid
+        x = 20;            // invalid
+- It will not allow hoisting and shadowing.
+
+FAQ: What is hoisting?
+Ans: It is the technique of accessing a variable before declaring.
+       It is supported only for "var".
+
+FAQ: What is shadowing?
+Ans: It is the process of declaring same name identifier within the scope. It is also allowed only for "var".
+
+
+                             Data Type
+- JavaScript is not strongly typed.
+- TypeScript is strongly typed.
+- Data Type defines data structure.
+        a) Type
+        b) Range
+
+Syntax:
+            let  variableName:dataType;
+
+- All JavaScript Data Types are same in TypeScript
+
+Primitive Types
+1. number
+2. string
+3. boolean
+4. null
+5. undefined
+
+Non Primitive Types
+1. Array
+2. Object
+3. Map
+
+Ex:
+1. Go to Src folder
+2. Add a new file
+         Index.ts
+
+let UserName:string = "John";
+let Age:number = 22;
+let Subscribed:boolean = true;
+console.log(`Name=${UserName}\nAge=${Age}\nSubscribed=${Subscribed}`);
+
+3. Open File location in Integrated Terminal
+
+      D:\...yourproject\src> tsc  index.ts
+
+      > node  index.js
+
+Ex: Using TypeScript with HTML
+
+1.  Index.ts
+
+function bodyload()
+{
+    let UserName:string = "John";
+    let Age:number = 22;
+    let Subscribed:boolean = true;
+
+    document.querySelector("p").innerHTML = `
+    User Name : ${UserName} <br>
+    Age : ${Age} <br>
+    Subscribed: ${Subscribed}
+    `;
+}
+
+2. Compile
+        > tsc  index.ts
+
+3. Link the javascript file to HTML page
+
+    index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index</title>
+    <script src="../src/index.js"></script>
+</head>
+<body onload="bodyload()">
+    <h2>Typescript Project</h2>
+    <p></p>
+</body>
+</html>
+
+- TypeScript supports union of types
+
+        let variable:dataType|dataType|dataType;
+        let  x:number|string;
+        let  x:number|boolean|string;
+
+Ex:
+Index.ts
+
+function bodyload()
+{
+    let UserName:string|null = prompt("Enter User Name");
+    let Age:number|null = parseInt(prompt("Enter Age"));
+    let Subscribed:boolean|null = (prompt("Enter Subscribed")=="true"?true:false);
+
+    document.querySelector("p").innerHTML = `
+    User Name : ${UserName} <br>
+    Age : ${Age} <br>
+    Subscribed: ${Subscribed}
+    `;
+}
+
+FAQ: What is difference between undefined and not defined?
+Ans: undefined means value is not provided.
+        no defined means reference is not available.
+
+FAQ: What is difference between undefined and null?
+Ans:  undefined is at compile time.
+        null is at run time.
